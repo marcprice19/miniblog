@@ -1,5 +1,4 @@
 Miniblog::Application.routes.draw do
-  get "static/about"
   resources :articles, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -9,6 +8,7 @@ Miniblog::Application.routes.draw do
   root 'articles#index'
 
   get '/about' => 'static#about'
+  get '/search' => 'search#results'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
